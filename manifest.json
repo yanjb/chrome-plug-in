@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "My Extension",
+	"version": "0.1",
+	"description": "波波的第一个chrome插件",
+	"icons": { 
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "icon48.png",
+		"default_title": "波波插件",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"notifications",
+		"tabs",
+		"*://*/*"
+	],
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"css": ["mystyles.css"],
+			"js": ["jquery.js", "myscript.js"]
+		}
+	]
+}
